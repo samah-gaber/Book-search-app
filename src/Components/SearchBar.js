@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { searchBooksSaga } from '../Redux/Actions/index';
+import { Field, reduxForm } from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -9,46 +10,38 @@ import Container from 'react-bootstrap/Container';
 
 class SearchBar extends React.Component {
 
-    constructor (props) {
-        super (props);
-        this.state = {
-            bookSearchQuery: ''
-        };
-    };
+    onSubmit = ({bookSearch}) => {
+        this.props.searchBooksSaga( bookSearch );
+    }
 
-    onSearchInputChange = event => {
-        this.setState({
-            bookSearchQuery: event.target.value
-        });
-    };
-
-    onSubmit = event => {
-        event.preventDefault();
-        const query = this.state.bookSearchQuery;
-        this.props.searchBooksSaga( query );
+    renderSearchInput = ({input}) => {
+        return (
+                <Form.Group controlId="formBasicEmail">
+                    <Row>
+                        <Col md={2}>
+                            <Form.Label>Enter book name</Form.Label>
+                        </Col>
+                        <Col md={10}>
+                            <Form.Control 
+                                type="text" 
+                                placeholder="Enter book name"
+                                onChange={input.onChange}
+                                value={input.value}
+                                />
+                        </Col>
+                    </Row>
+                </Form.Group>
+        )
     }
 
     render () {
+        const { handleSubmit } = this.props;
         return (
             <Container>
-                <Form onSubmit={this.onSubmit} style={{marginTop: '30px', marginBottom: '30px'}}>
+                <Form onSubmit={handleSubmit(this.onSubmit)} style={{marginTop: '30px', marginBottom: '30px'}}>
                     <Row>
                         <Col md={10}>
-                            <Form.Group controlId="formBasicEmail">
-                                <Row>
-                                    <Col md={2}>
-                                        <Form.Label>Enter book name</Form.Label>
-                                    </Col>
-                                    <Col md={10}>
-                                        <Form.Control 
-                                            type="text" 
-                                            placeholder="Enter book name"
-                                            onChange={this.onSearchInputChange}
-                                            value={this.state.bookSearchQuery}
-                                            />
-                                    </Col>
-                                </Row>
-                            </Form.Group>
+                            <Field name='bookSearch' component={this.renderSearchInput}/>
                         </Col>
                         <Col md={2}>
                             <Button variant="primary" type="submit">
@@ -62,4 +55,8 @@ class SearchBar extends React.Component {
     };
 };
 
-export default connect(null, { searchBooksSaga })(SearchBar);
+const reduxFormComp = reduxForm({
+    form: 'SearchForm'
+})(SearchBar);
+
+export default connect(null, { searchBooksSaga })(reduxFormComp);
