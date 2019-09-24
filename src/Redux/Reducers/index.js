@@ -4,5 +4,5 @@ import SearchReducer from './SearchReducer';
 
 export default combineReducers({
     books: SearchReducer,
-    form: formReducer
+    form: formReducer  // redux form
 });
