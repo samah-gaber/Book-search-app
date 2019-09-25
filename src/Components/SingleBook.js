@@ -6,6 +6,17 @@ const SignleBook = props => {
     const { title, authors, imageLinks } = volumeInfo;
     const { epub, pdf, webReaderLink } = accessInfo;
     const { buyLink } = saleInfo;
+
+    // style 
+    // ========
+
+    const bookTitleStyle = {
+        color: '#a95780'
+    };
+
+    const anchorStyle = {
+        marginRight: '20px'
+    }
     
     return (
         <Media style={{marginBottom: '20px'}}>
@@ -15,7 +26,7 @@ const SignleBook = props => {
                 alt="book cover photo"
             />
             <Media.Body>
-                <h5>{ title }</h5>
+                <h5 style={bookTitleStyle}>{ title }</h5>
                 <p> by 
                     {   authors ? authors.map(
                             author => <span key={author} > {author}</span>
@@ -26,25 +37,25 @@ const SignleBook = props => {
                     {
                         epub.isAvailable ? 
                             pdf.downloadLink ? 
-                            <div><a href={epub.downloadLink} >Download epub</a></div> :
-                            <div><a href={epub.acsTokenLink} >Download epub</a></div> :
+                            <a href={epub.downloadLink} style={anchorStyle}>Download epub</a>:
+                            <a href={epub.acsTokenLink} style={anchorStyle}>Download epub</a> :
                         null
                     }
                     {
                         pdf.isAvailable ? 
                             pdf.downloadLink ? 
-                            <div><a href={pdf.downloadLink}>Download pdf</a></div> : 
-                            <div><a href={pdf.acsTokenLink}>Download pdf</a></div> :
+                            <a href={pdf.downloadLink} style={anchorStyle}>Download pdf</a> : 
+                            <a href={pdf.acsTokenLink} style={anchorStyle}>Download pdf</a> :
                          null
                     }
                     {
                         webReaderLink ? 
-                        <div><a href={webReaderLink}>Read Online</a></div>
+                        <a href={webReaderLink} style={anchorStyle}>Read Online</a>
                         : null
                     }
                     {
                         buyLink ? 
-                        <div><a href={buyLink}>Buy Now</a></div>
+                        <a href={buyLink} style={anchorStyle}>Buy Now</a>
                         : null
                     }
                 </div>

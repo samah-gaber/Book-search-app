@@ -9,7 +9,7 @@ const BooksList = ({booksList}) => {
             {   
                 booksList && booksList.length > 0 ? booksList.map(
                     book => <SingleBook key={book.id} book={book}/>
-                ) : <p style={{color: 'lightgrey'}}>no books to show</p>
+                ) : null
             }
             
         </Container>
