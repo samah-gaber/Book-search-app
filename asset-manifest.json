@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/samah-gaber/Book-search-app.git/static/js/main.a24d9614.chunk.js",
-    "main.js.map": "/samah-gaber/Book-search-app.git/static/js/main.a24d9614.chunk.js.map",
-    "runtime-main.js": "/samah-gaber/Book-search-app.git/static/js/runtime-main.dc37d348.js",
-    "runtime-main.js.map": "/samah-gaber/Book-search-app.git/static/js/runtime-main.dc37d348.js.map",
-    "static/css/2.266e55a5.chunk.css": "/samah-gaber/Book-search-app.git/static/css/2.266e55a5.chunk.css",
-    "static/js/2.f7795c49.chunk.js": "/samah-gaber/Book-search-app.git/static/js/2.f7795c49.chunk.js",
-    "static/js/2.f7795c49.chunk.js.map": "/samah-gaber/Book-search-app.git/static/js/2.f7795c49.chunk.js.map",
-    "index.html": "/samah-gaber/Book-search-app.git/index.html",
-    "precache-manifest.f60bf215caf367fe4960b7d16e918d3e.js": "/samah-gaber/Book-search-app.git/precache-manifest.f60bf215caf367fe4960b7d16e918d3e.js",
-    "service-worker.js": "/samah-gaber/Book-search-app.git/service-worker.js",
-    "static/css/2.266e55a5.chunk.css.map": "/samah-gaber/Book-search-app.git/static/css/2.266e55a5.chunk.css.map"
+    "main.js": "/Book-search-app/static/js/main.a24d9614.chunk.js",
+    "main.js.map": "/Book-search-app/static/js/main.a24d9614.chunk.js.map",
+    "runtime-main.js": "/Book-search-app/static/js/runtime-main.f1b5493c.js",
+    "runtime-main.js.map": "/Book-search-app/static/js/runtime-main.f1b5493c.js.map",
+    "static/css/2.266e55a5.chunk.css": "/Book-search-app/static/css/2.266e55a5.chunk.css",
+    "static/js/2.f7795c49.chunk.js": "/Book-search-app/static/js/2.f7795c49.chunk.js",
+    "static/js/2.f7795c49.chunk.js.map": "/Book-search-app/static/js/2.f7795c49.chunk.js.map",
+    "index.html": "/Book-search-app/index.html",
+    "precache-manifest.65c35cf3d80c63a4f09bfbb06c3d7bc9.js": "/Book-search-app/precache-manifest.65c35cf3d80c63a4f09bfbb06c3d7bc9.js",
+    "service-worker.js": "/Book-search-app/service-worker.js",
+    "static/css/2.266e55a5.chunk.css.map": "/Book-search-app/static/css/2.266e55a5.chunk.css.map"
   }
 }
